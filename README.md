@@ -1,43 +1,60 @@
-# Empty Project &middot; [![Tests](https://travis-ci.org/nicolasdao/template-emptyjs.svg?branch=master)](https://travis-ci.org/nicolasdao/template-emptyjs) [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause) [![Neap](https://neap.co/img/made_by_neap.svg)](#this-is-what-we-re-up-to)
-__*Empty project*__ which does heaps of cool stuff.
+# setfile &middot; [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause) [![Neap](https://neap.co/img/made_by_neap.svg)](#this-is-what-we-re-up-to)
+__*setfile*__ modifies config file. Typically used to transform config files before deployments in npm scripts (e.g., npm run deploy).
+
+For example, to change the environment of an AWS Elastic Beanstalk config before running `eb deploy`, the following deploy script can be added to the packahe.json:
+
+```
+"scripts": {
+	"deploy:test": "setfile ./.elasticbeanstalk/config.yml branch-defaults.master.environment=test global.profile=my-test-profile && eb deploy"
+}
+``` 
+
+> WARNING: Currently only support .json, .yml and .yaml file extensions.
 
 # Table of Contents
 
 > * [Install](#install) 
 > * [How To Use It](#how-to-use-it) 
->   - [Basic](#basic)
->   - [Config](#config)
-> * [FAQ](#faq)
 > * [About Neap](#this-is-what-we-re-up-to)
 > * [License](#license)
 
 
 # Install
 ```
-git clone https://github.com/nicolasdao/template-emptyjs.git new-project-name
-cd new-project-name
-npm install
-npm test
-npm start
+npm i setfile --save-dev
 ```
 
 # How To Use It
-## Basic
 
-  | #  |Task             | Command                                                       | Note                                               | 
-  |:-:| :--------------- |:------------------------------------------------------------- |:---------------------------------------------------|
-  | 1 | Start            | `npm start`                                                   | Starts node with hot reload thanks to `node-dev`.   |
-  | 2 | Lint             | `npm run lint`                                              	 | Lints and automatically fixes errors when possible. |
-  | 3 | Current version | `npm run v` | Gets the current version of your project. |
-  | 4 | Increase version | `npm run rls 1.1.0` | Sets the version to a specific number. |
-  | 5 | Test             | `npm test`                                                    | Tests all files in the `test` folder.               |
+This package has been created to be used as a pre-command in npm script. 
 
-## Config
+```
+"scripts": {
+	"deploy:test": "setfile ./.elasticbeanstalk/config.yml branch-defaults.master.environment=test global.profile=my-test-profile && eb deploy"
+}
+``` 
 
-__*Update The git Repo:*__ `git remote set-url origin https://github.com/nicolasdao/project.git`
+It accepts the following signature: 
 
-# FAQ
-Blablabla
+```
+setfile <relative or absolute path to the config file> param01=value01 param02=value02
+```
+
+Where there can be an arbitrary number of parameters and where each parameter's name describe the property to change. For example, let's take a look at a JSON config file similar to this:
+
+```js
+{
+	"person": {
+		"name": "Alfred"
+	}
+}
+```
+
+The following command changes the person's name and add a new `age` property:
+
+```
+setfile ./myconfig.json person.name="Alfred Hitchcock" person.age=81
+```
 
 # This Is What We re Up To
 We are Neap, an Australian Technology consultancy powering the startup ecosystem in Sydney. We simply love building Tech and also meeting new people, so don't hesitate to connect with us at [https://neap.co](https://neap.co).
