@@ -1,16 +1,19 @@
 {
-  "name": "emptyjs",
-  "version": "0.0.6",
-  "description": "",
+  "name": "setfile",
+  "version": "0.0.1",
+  "description": "Modifies config file. Typically used to transform config files before deployments in npm scripts (e.g., npm run deploy).",
   "main": "index.js",
+  "bin": {
+    "setfile": "./index.js"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nicolasdao/template-emptyjs.git"
+    "url": "https://github.com/nicolasdao/setfile.git"
   },
   "bugs": {
-    "url": "https://github.com/nicolasdao/template-emptyjs/issues"
+    "url": "https://github.com/nicolasdao/setfile/issues"
   },
-  "homepage": "https://github.com/nicolasdao/template-emptyjs#readme",
+  "homepage": "https://github.com/nicolasdao/setfile#readme",
   "scripts": {
     "dev": "TZ=UTC NODE_ENV=dev node-dev index.js",
     "lint": "eslint index.js src/ test/ --fix",
@@ -32,6 +35,8 @@
   "dependencies": {
     "core-async": "^1.0.4",
     "form-data": "^2.4.0",
-    "node-fetch": "^2.3.0"
+    "json2yaml": "^1.1.0",
+    "node-fetch": "^2.3.0",
+    "yamljs": "^0.3.0"
   }
 }

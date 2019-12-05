@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2017-2019, Neap Pty Ltd.
+ * Copyright (c) 2017-2019, Cloudless Consulting Pty Ltd.
  * All rights reserved.
  * 
  * This source code is licensed under the BSD-style license found in the
@@ -992,7 +992,7 @@ const mirror = (obj, refObj) => {
  * @param  {Object} value Value to be set with.
  * @return {Object}       Original object with the property set.
  */
-const setProperty = (obj,prop, value) => {
+const setProperty = (obj, prop, value) => {
 	if (!prop)
 		return obj 
 	

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2017-2019, Neap Pty Ltd.
+ * Copyright (c) 2017-2019, Cloudless Consulting Pty Ltd.
  * All rights reserved.
  * 
  * This source code is licensed under the BSD-style license found in the
@@ -134,10 +134,10 @@ describe('utils', () => {
 	})
 	describe('#obj.set', () => {
 		it('Should set a specific object\'s property value/', () => {
-			const o = setProperty(setProperty({ name:'Nic' }, 'company.name', 'Neap Pty Ltd'), 'age', 38)
+			const o = setProperty(setProperty({ name:'Nic' }, 'company.name', 'Cloudless Consulting Pty Ltd'), 'age', 38)
 
 			assert.equal(o.name, 'Nic', '01')
-			assert.equal(o.company.name, 'Neap Pty Ltd', '02')
+			assert.equal(o.company.name, 'Cloudless Consulting Pty Ltd', '02')
 			assert.equal(o.age, 38, '03')
 		})
 	})
