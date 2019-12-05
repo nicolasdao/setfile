@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.7](https://github.com/nicolasdao/setfile/compare/v0.0.6...v0.0.7) (2019-12-05)
+
+
+### Bug Fixes
+
+* Errors don't emit the right exit code to interupt the following process ([53c8c66](https://github.com/nicolasdao/setfile/commit/53c8c6688f5e62e62113063fcfceb24b2757914b))
+
 ### [0.0.6](https://github.com/nicolasdao/setfile/compare/v0.0.5...v0.0.6) (2019-12-05)
 
 
