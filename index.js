@@ -20,7 +20,7 @@ const _parseYmlToJson = (str, ymlPath) => {
 		return YAML.parse(str)
 	} catch(err) {
 		_printError(`Invalid YAML syntax in file ${ymlPath}.`)
-		process.exit()
+		process.exit(1)
 	}
 }
 
@@ -29,7 +29,7 @@ const _parseJsonToJson = (str, jsonPath) => {
 		return JSON.parse(str)
 	} catch(err) {
 		_printError(`Invalid JSON syntax in file ${jsonPath}.`)
-		process.exit()
+		process.exit(1)
 	}
 }
 
@@ -38,7 +38,7 @@ const _parseJsonToYaml = obj => {
 		return JSON2YAML.stringify(obj)
 	} catch(err) {
 		_printError('Failed to parse obj to YAML.')
-		process.exit()
+		process.exit(1)
 	}
 }
 
@@ -50,7 +50,7 @@ const _getNewProps = args => {
 		const [prop, ...rest] = arg.split('=')
 		if (!rest.length) {
 			_printError(`Invalid argument ${arg}. A valid argument has an '=' sign.`)
-			process.exit()		
+			process.exit(1)		
 		}
 		const value = rest.join('=')
 		return { prop, value }
@@ -61,19 +61,19 @@ const [,,filePath, ...args] = process.argv
 
 if (!filePath) {
 	_printError('Missing required config file path.')
-	process.exit()
+	process.exit(1)
 }
 
 const fileAbsPath = path.resolve(filePath)
 if (!fs.existsSync(fileAbsPath)) {
 	_printError(`File ${fileAbsPath} not found.`)
-	process.exit()	
+	process.exit(1)	
 }
 
 const ext = (path.extname(fileAbsPath) || '').toLowerCase()
 if (ext != '.json' && ext != '.yml' && ext != '.yaml') {
 	_printError(`File extension ${ext} not supported.`)
-	process.exit()	
+	process.exit(1)	
 }
 
 const newProps = _getNewProps(args)
