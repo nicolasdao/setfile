@@ -30,7 +30,7 @@
     "eslint": "^4.19.1",
     "mocha": "^5.2.0",
     "node-dev": "^4.0.0",
-    "standard-version": "^7.0.1"
+    "standard-version": "^8.0.1"
   },
   "dependencies": {
     "core-async": "^1.0.4",
