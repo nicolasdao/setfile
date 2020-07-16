@@ -1,6 +1,6 @@
 {
   "name": "setfile",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Modifies config file. Typically used to transform config files before deployments in npm scripts (e.g., npm run deploy).",
   "main": "index.js",
   "bin": {

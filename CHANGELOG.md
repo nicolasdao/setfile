@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.8](https://github.com/nicolasdao/setfile/compare/v0.0.7...v0.0.8) (2020-07-16)
+
+
+### Bug Fixes
+
+* Vulnerabilities ([f971bf5](https://github.com/nicolasdao/setfile/commit/f971bf59441e6154fdc4fbc98f55c3a7bbf70704))
+
 ### [0.0.7](https://github.com/nicolasdao/setfile/compare/v0.0.6...v0.0.7) (2019-12-05)
 
 
